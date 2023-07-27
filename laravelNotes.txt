@@ -35,3 +35,49 @@ composer create-project laravel/laravel example-app
 -------------------------------------------------
 -Crear proyecto laravel: laravel new example-app
 -Visualizar proyecto en el navegador: php artisan serve
+------------------------------------------------
+ARTISAN-> crea archivos base por nosotros
+interfaz de linea de comandos de laravel que ayuda a todo el proceso de desarrollo.
+cada comando permite realizaar y automatizar trabajo.
+ej:
+php artisan make:controller --help
+la opcion --help trae los datos de como se usa el comando
+-------------------------------------------------
+Routes
+Nuestro trabajo comienza en el desarrollo y definición de las rutas (routes), estas son unas de las capas mas importantes en el Framework debido a que el route se encarga de manejar el flujo de solicitudes y respuestas, desde y hacia el cliente.
+
+La carpeta Routes está compuesto por:
+• api.php: Aquí se definen todas las rutas de la APIs que puedan tener nuestra app.
+• channels.php: Aquí se definen los canales de transmisión de evento (ej. notificaciones en tiempo real).
+• console.php: en este archivo definimos comando de consola.
+• web.php: Aquí se definen las rutas de nuestra 
+aplicación web (HTTP).
+Route::get | Consulta
+Route::post | Guarda
+Route::delete | Elimina
+Route::put | Actualiza
+----------------------------------------------
+Views
+Configuracion para retornar una vista.
+Se utiliza una funcion para retornar una vista view('home')
+para añadir acada vista manualmente es necesario escribir  su extension .blade.blog, ya que sin eso no renderiza el codigo, ya que se usa estructura y codgio blade. blade es el motor de plantillas de laravel
+-------------------------------------------------Templates
+Nos permite tener archivos pequeños de fácil administración, con poco código.
+Esto mediante templates, generamos uno y lo extendemos en distintos archivos
+
+Creo un archivo template.blade.php utilizamos la directiva @yield('content')
+En el archivo donde deseo utilizar él, template, extiendo @extends('template')
+Posterior ya puedo utilizar él, template usando @section('content')
+---------------------------------------------------
+Migraciones
+Todo lo que son migraciones, controladores y factories tienen su origen en los modelos es decir no tiene sentido tener una migración, un factory sino existe un modelo.
+
+Así que una forma facil de crear todo seria partir del modelo con un comando tipo:
+
+php artisan make:model Post -mcf
+
+Los Migrations son como un control de versiones para nuestra base de datos, permitiendo a nosotros y a nuestro equipo definir el esquema (schema) de nuestra base de datos y poder compartirla.
+
+Como bien mencionamos, las migraciones se encargan de definir todas las tablas y atributos de nuestra base de datos desde nuestra aplicación de php, haciendo uso de una interfaz orientada a objetos (OOP).
+
+Una de sus mayores ventajas es que podemos tener diferentes versiones de nuestra base de datos, como si de git se tratace, además nos permite generar tablas para diferentes motores de base de datos (MySQL, MariaBD, SQLite, PostgreSQL, etc) haciendo uso del mismo lenguaje, php.
