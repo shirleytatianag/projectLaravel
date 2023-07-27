@@ -1,0 +1,37 @@
+APP : Aqui vivira todo nuestro codigo principal.
+
+Bootstrap: Utilizada por laravel para mejorar el rendimiento
+
+config: Cada paquete que se instale. Se genera un archivo que se puede editar y modificar.
+
+Database : Carpeta principal de las bases de datos
+
+a. migrations : Archivos con la estructura principal para desarrollar tablas.
+
+b. factories: nos permite desarrollar datos falsos para probar aplicacion
+
+c. seeders: encargada de ejecutar los factories que desarrollemos
+
+lang: idioma
+
+public: punto de acceso a web.
+
+resources: archivos originales css,javascript y vistas
+
+routes: configuramos rutas del trabaja principalmente en web.php
+
+storage: elementos generados por laravel. cache o si usuario guarda muchos archivos se pueden guardar hay.
+
+ test: Pruebas
+
+vendor: Nose toca esta carpeta. Ahí se ve todo lo que se instala con composer.
+
+En recursos se tienen las vistas orginales, as que se pueden editar.
+en Storages/framwork/views, se tienen las compiladas, es el codigo php de maner directa
+-------------------------------------------
+After you have installed PHP and Composer, you may create a new Laravel project via the Composer create-project command:
+
+composer create-project laravel/laravel example-app
+-------------------------------------------------
+-Crear proyecto laravel: laravel new example-app
+-Visualizar proyecto en el navegador: php artisan serve
