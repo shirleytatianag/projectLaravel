@@ -9,6 +9,12 @@ class Post extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'title',
+        'slug',
+        'body',
+    ];
+
     //registrar/especificar que existe una relacion en la tabla
     public function user(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {

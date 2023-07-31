@@ -7,10 +7,18 @@ use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
-    public function home(){
-        return view('home');
+    public function home(Request $request){
+        $search= $request->search;
+        $posts= Post::where('title', 'ILIKE', "%{$search}%")
+            ->with('user')
+            ->latest()->paginate();
+        return view('home', ['posts'=>$posts]);
     }
-    public function blog(){
+    public function post(Post $post){
+        return view('post', ['post'=>$post]);
+    }
+
+    /*public function blog(){
         //$posts= Post::get();
         //$post= Post::first();
         //$post= Post::find(25);
@@ -19,9 +27,6 @@ class PageController extends Controller
         $posts= Post::latest()->paginate();
         //dd($posts);
         return view('blog', ['ej'=>$posts]);
-    }
-    public function post(Post $post){
+    }*/
 
-        return view('post', ['ej'=>$post]);
-    }
 }

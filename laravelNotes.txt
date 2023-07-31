@@ -81,3 +81,33 @@ Los Migrations son como un control de versiones para nuestra base de datos, perm
 Como bien mencionamos, las migraciones se encargan de definir todas las tablas y atributos de nuestra base de datos desde nuestra aplicación de php, haciendo uso de una interfaz orientada a objetos (OOP).
 
 Una de sus mayores ventajas es que podemos tener diferentes versiones de nuestra base de datos, como si de git se tratace, además nos permite generar tablas para diferentes motores de base de datos (MySQL, MariaBD, SQLite, PostgreSQL, etc) haciendo uso del mismo lenguaje, php.
+
+PARA QUE TODAS LAS MIGRACIONES E CONVIERTAN EN BASE DE DATOS DEBO EMITIR EL SGTW COMANDO: php artisan migrate
+
+Para crear una migracion: php artisan make:migration create_NOMBRETABLA_table
+
+Las migraciones son estructuras que permiten gestionar el esquema de la base de datos.
+
+Permiten tener un historial de versiones de la base de datos.
+
+Para que se refreque la info de bd  php artisan migrate:refresh --seed; primeor se refresca todo respecto a las  migraciones y luego el seed (semilla)
+-------------------------------------------------
+Eloquent-> manejar y administar bases de datos
+-----------------------------------------------
+Configuracion de inicios de sesión
+composer require laravel/breeze --dev
+
+php artisan breeze:install 
+ npm install 
+-----------------------------------------------
+Panel administrativo
+Para ver el istado de rutas php artisan route:list
+----------------------------------------------------
+barra de depuracion:
+composer require barryvdh/laravel-debugbar --dev
+
+se puede mostrar o no desde el archivo .env
+en la parte de : APP_DEBUG=true (false no muestra la barra y true si la muestra)
+--------------------------------------------------
+Íconos= https://heroicons.com/
+Componentes de php= https://packagist.org/
